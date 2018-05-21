@@ -1,0 +1,26 @@
+.sidebar-container {
+    flex: 1;
+    position: fixed;   
+    min-width: 100%; 
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+  }
+  .sidebar-sidenav{
+     width: 240px;
+  }
+
+  .sidebar-sidenav-content{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  .example-icon {
+    padding: 0 14px;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  
