@@ -1,15 +1,18 @@
-<mat-sidenav-container class="sidebar-container">
-  <mat-sidenav class="sidebar-sidenav" #sidenav [mode]="mode.value">
+<mat-sidenav-container class="sidebar-container" >
+  <mat-sidenav class="sidebar-sidenav" #sidenav [mode]="mode.value" >
     <mat-toolbar color="primary">
       <mat-toolbar-row>
-        <span>Custom Toolbar</span>
+        <span>Sara</span>
       </mat-toolbar-row>
     </mat-toolbar>
-    <mat-list>
-      <mat-list-item> Pepper </mat-list-item>
-      <mat-list-item> Salt </mat-list-item>
-      <mat-list-item> Paprika </mat-list-item>
-    </mat-list>
+    <mat-nav-list>
+      <mat-list-item *ngFor="let user of users | async">
+         <a matLine [routerLink]="['/admin',user.id]">{{user.name }}</a>
+         <!-- <button mat-icon-button (click)="showInfo(link)">
+            <mat-icon>{{info}}</mat-icon>
+         </button> -->
+      </mat-list-item>
+    </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content class="sidebar-sidenav-content">
     <app-toolbar (toggleSidenav)="sidenav.toggle()"></app-toolbar>
